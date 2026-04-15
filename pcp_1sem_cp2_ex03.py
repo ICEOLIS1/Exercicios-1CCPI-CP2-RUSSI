@@ -1,19 +1,38 @@
+cp1=float(input('Digite a nota da cp1: '))
+cp2=float(input('Digite a nota da cp2: '))
+cp3=float(input('Digite a nota da cp3: '))
+s1=float(input('Digite a nota da sprint1: '))
+s2=float(input('Digite a nota da sprint2: '))
+gs=float(input('Digite a nota da global solution: '))
 
-cp1 = 8.0
-cp2 = 6.5
-cp3 = 9.0
-sp1 = 7.0
-sp2 = 8.5
-gs = 9.0
+if cp1<=10 and cp2<=10 and cp3<=10:
+    if cp1<cp2 and cp1<cp3:
+        menor=cp1
+        soma_cp=cp2+cp3
+    elif cp2<cp1 and cp2<cp3:
+        menor=cp2
+        soma_cp=cp1+cp3
+    else:
+        menor=cp3
+        soma_cp=cp1+cp2
+else:
+    print('nota da cp invalida')
+    exit()
 
-menor = cp1
-if cp2 < menor:
-    menor = cp2
-if cp3 < menor:
-    menor = cp3
+if s1<=10 and s2<=10:
+    soma_s=s1+s2
+else:
+    print('nota da sprint invalida')
+    exit()
 
-media = ((cp1 + cp2 + cp3 - menor + sp1 + sp2) / 4) * 0.4 + gs * 0.6
-media_peso = media * 0.4
+if gs<=10:
+    gs=gs
+else:
+    print('nota da global solution invalida')
+    exit()
 
-print("Média:", round(media, 1))
-print("Média com peso:", round(media_peso, 1))
+media=((cp1+cp2+cp3-menor+s1+s2)/4)*0.4+(gs * 0.6)
+media_com_peso=media*0.4
+
+print(f'Media do semestre: {media:.1f}')
+print(f'Media com peso: {media_com_peso:.1f}')

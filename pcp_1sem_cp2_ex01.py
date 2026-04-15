@@ -1,33 +1,40 @@
+origem=int(input('Digite o codigo de origem: '))
+peso=float(input('Digite o peso da carga em toneladas: '))
+codigo=int(input('Digite o codigo da carga: '))
 
-estado = 1
-peso_ton = 10
-codigo = 15
+match origem:
+    case 1:
+        imposto=35
+    case 2:
+        imposto=25
+    case 3:
+        imposto=15
+    case 4:
+        imposto=5
+    case 5:
+        imposto=0
+    case _:
+        print('codigo invalido')
+        exit()
 
-peso_kg = peso_ton * 1000
+pesokg=peso*1000
 
-if 10 <= codigo <= 20:
-    preco_kg = 100
-elif 21 <= codigo <= 30:
-    preco_kg = 250
+if 10<=codigo<=20:
+    precokg=100
+elif 21<=codigo<=30:
+    precokg=250
+elif 31<=codigo<=40:
+    precokg=340
 else:
-    preco_kg = 340
+    print('codigo da carga invalido')
+    exit()
 
-preco_carga = peso_kg * preco_kg
 
-if estado == 1:
-    imposto = preco_carga * 0.35
-elif estado == 2:
-    imposto = preco_carga * 0.25
-elif estado == 3:
-    imposto = preco_carga * 0.15
-elif estado == 4:
-    imposto = preco_carga * 0.05
-else:
-    imposto = 0
+preco=pesokg*precokg
+preco_imposto=preco*imposto/100
+preco_total=preco+preco_imposto
 
-total = preco_carga + imposto
-
-print("Peso em kg:", peso_kg)
-print("Preço da carga:", preco_carga)
-print("Imposto:", imposto)
-print("Total:", total)
+print(f'Peso em kg {pesokg:.1f}')
+print(f'Preço da carga R${preco:.2f}')
+print(f'Imposto {imposto}%')
+print(f'Preço total R${preco_total:.2f}')
