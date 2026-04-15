@@ -1,3 +1,4 @@
+#EX1
 origem=int(input('Digite o codigo de origem: '))
 peso=float(input('Digite o peso da carga em toneladas: '))
 codigo=int(input('Digite o codigo da carga: '))

@@ -1,3 +1,4 @@
+#EX5
 def pode_aprovar(idade,renda,emprestimo):
     if idade>18 and emprestimo<=20*renda:
         return 'Aprovado'

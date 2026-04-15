@@ -1,3 +1,4 @@
+#EX2
 a=int(input('Digite o lado a: '))
 b=int(input('Digite o lado b: '))
 c=int(input('Digite o lado c: '))

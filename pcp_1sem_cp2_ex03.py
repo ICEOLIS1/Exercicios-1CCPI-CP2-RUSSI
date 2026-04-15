@@ -1,3 +1,4 @@
+#EX3
 cp1=float(input('Digite a nota da cp1: '))
 cp2=float(input('Digite a nota da cp2: '))
 cp3=float(input('Digite a nota da cp3: '))
